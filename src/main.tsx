@@ -1,10 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import SearchPokemonName from "./pages/SearchPokemonName.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-          <App />
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<SearchPokemonName />} />
+          </Routes>
+      </BrowserRouter>
+
 
   </StrictMode>,
 )
